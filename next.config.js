@@ -7,10 +7,11 @@ module.exports = {
       includePaths: [path.join(__dirname, 'styles')],
       prependData: `@import "~@styles/variables.scss";`,
     },
-    webpack: (config, {isServer, dev}) => {
+
+/*webpack: (config, {isServer, dev}) => {
       /* 
 	if (!dev && isServer) {
-	  const originalEntry = config.entry
+const originalEntry = config.entry
 
 	  config.entry = async () => {
 	    const entries = { ...(await originalEntry()) }
@@ -18,13 +19,13 @@ module.exports = {
 	    return entries
 	  }
 	}
-*/
 
-       /*if (isServer) {
+
+       if (isServer) {
             config.externals.push('_http_common');        
        }
        return config;
-       */
     },
+*/
    // target: 'serverless',
 }
