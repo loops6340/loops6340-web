@@ -1,0 +1,70 @@
+.presentacionServidor {
+    background-color: $color-claro;
+    display: grid;
+    box-shadow: lighten($color: $color-claro, $amount: 10) 5px 5px 15px;
+    grid-template-columns: 1fr 6fr;
+    grid-template-rows: auto;
+    column-gap: 20px;
+
+    @media screen and (max-width: 400px) {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        grid-column: 1;
+        grid-row: 1;
+    }
+    p {
+        padding: 5px;
+        width: 100%;
+        font-size: 20px;
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    @media screen and (max-width: 400px){
+        p {
+            grid-column: 1;
+            grid-row: 2;
+        }
+    }
+}
+
+.links {
+    ul {
+        text-align: center;
+        list-style:none;       
+        margin: 0;
+        padding: 0%;
+        height: 50px;
+        li {
+            display: inline-block;
+            button {
+                display: block;
+                margin: 5px;
+            }
+        }
+    }
+}
+
+.emojisContainer {
+    ul {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        li {
+            border: 10px 10px black;
+            img {
+                width: 50px;
+                object-fit: cover;
+                border-color: black;
+                border-width: 10px;
+                outline-color: black;
+            }
+        }
+    }
+}
