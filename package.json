@@ -16,7 +16,8 @@
     "reflect-metadata": "^0.1.13",
     "sass": "^1.44.0",
     "sqlite3": "^5.0.2",
-    "swr": "^1.1.0"
+    "swr": "^1.1.0",
+    "undici": "^4.11.0"
   },
   "devDependencies": {
     "@types/node": "^12.0.12",
