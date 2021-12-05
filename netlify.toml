@@ -5,5 +5,5 @@
 [functions]
   included_files = [".next/*.json"]
 
-[[plugins]]
+[plugins]
   package = “@netlify/plugin-nextjs”
