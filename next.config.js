@@ -8,7 +8,7 @@ module.exports = {
       prependData: `@import "~@styles/variables.scss";`,
     },
     webpack: (config, {isServer, dev}) => {
-       
+      /* 
 	if (!dev && isServer) {
 	  const originalEntry = config.entry
 
@@ -18,7 +18,7 @@ module.exports = {
 	    return entries
 	  }
 	}
-
+*/
        if (isServer) {
             config.externals.push('_http_common');        
        }
