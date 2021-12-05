@@ -5,5 +5,3 @@ publish = ".next"
 [functions]
 included_files = [".next/*.json"]
 
-[[plugins]]
-package = “@netlify/plugin-nextjs”
