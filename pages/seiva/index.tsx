@@ -1,7 +1,7 @@
 import Link from "next/link";
 import styles from "../../styles/seiva.module.scss";
 //import { client } from '../../server/discord'
-import {GetStaticProps} from "next";
+//import {GetStaticProps} from "next";
 
 type Props = {
   name: string,
