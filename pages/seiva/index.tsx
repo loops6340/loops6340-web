@@ -1,7 +1,6 @@
 import Link from "next/link";
 import styles from "../../styles/seiva.module.scss";
-//import { client } from '../../server/discord'
-//import {GetStaticProps} from "next";
+import {GetStaticProps} from "next";
 
 type Props = {
   name: string,
@@ -9,7 +8,7 @@ type Props = {
   emojis: string[]
 }
 
-const SeivaServer = ({ name = "hi", iconURL = "", emojis = [] }: Props) => {
+const SeivaServer = ({ name, iconURL, emojis }: Props) => {
 
   return (
     <>
@@ -53,17 +52,17 @@ const SeivaServer = ({ name = "hi", iconURL = "", emojis = [] }: Props) => {
     </>
   );
 };
-/*
+
 export const getStaticProps: GetStaticProps = async () => {
-    const seiva = await client.guilds.fetch('760160214204022785')
+ //   const seiva = await client.guilds.fetch('760160214204022785')
 
     return {
         props: {
-            name: seiva.name,
-            iconURL: seiva.iconURL({ dynamic: true }),
-            emojis: seiva.emojis.cache.map(emoji => emoji.url)
+            name: "hi",
+            iconURL: "sSO!!",//seiva.iconURL({ dynamic: true }),
+            emojis: "SOSs"//seiva.emojis.cache.map(emoji => emoji.url)
         }
     }
 }
-*/
+
 export default SeivaServer;

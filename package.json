@@ -2,13 +2,12 @@
   "private": true,
   "scripts": {
     "dev": "nodemon",
-    "build": "prisma generate && next build && tsc --project tsconfig.server.json",
-    "start": "cross-env NODE_ENV=production node dist/index.js"
+    "build": "prisma generate && next build",
+    "start": "npm start"
   },
   "dependencies": {
     "@prisma/client": "^3.6.0",
     "cross-env": "^7.0.2",
-    "discord.js": "^13.3.1",
     "next": "latest",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
