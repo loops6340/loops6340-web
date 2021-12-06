@@ -14,11 +14,11 @@ const Momentazos = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) =
         </Link>
       </div>
       <div className={styles.container}>
-	{posts.map((post, i) => (
+	{/*posts.map((post, i) => (
 	    <div className={styles.containerItem} key={i}>
 		<img src={post.url}/>
 	    </div>
-	))}
+	))*/}
       </div>
     </div>
   );
@@ -27,10 +27,11 @@ const Momentazos = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) =
 export default Momentazos;
 
 export const getStaticProps = async () => {
-  const prisma = new PrismaClient()
+ /* const prisma = new PrismaClient()
 
   const posts = await prisma.momentazo.findMany()
-  
+  */
+ const posts: string[] = []
   return {
     props: { posts } 
   }
