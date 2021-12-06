@@ -1,9 +1,9 @@
 import Link from "next/link";
 import styles from '@styles/momentazos.module.scss'
-import { InferGetStaticPropsType } from "next";
-import { PrismaClient } from '@prisma/client'
+//import { InferGetStaticPropsType } from "next";
+//import { PrismaClient } from '@prisma/client'
 
-const Momentazos = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
+const Momentazos = () => { //{ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
 
   return (
     <div className="container">
