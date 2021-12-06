@@ -8,7 +8,7 @@ module.exports = {
       prependData: `@import "~@styles/variables.scss";`,
     },
 
-/*webpack: (config, {isServer, dev}) => {
+webpack: (config, {isServer, dev}) => {
       /* 
 	if (!dev && isServer) {
 const originalEntry = config.entry
@@ -19,13 +19,13 @@ const originalEntry = config.entry
 	    return entries
 	  }
 	}
-
+*/
 
        if (isServer) {
             config.externals.push('_http_common');        
        }
        return config;
     },
-*/
+
    // target: 'serverless',
 }
