@@ -1,9 +1,9 @@
 import Link from "next/link";
 import styles from '@styles/momentazos.module.scss'
-//import { InferGetStaticPropsType } from "next";
-//import { PrismaClient } from '@prisma/client'
+import { InferGetStaticPropsType } from "next";
+import { PrismaClient } from '@prisma/client'
 
-const Momentazos = () => { //{ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
+const Momentazos = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
 
   return (
     <div className="container">
@@ -14,11 +14,11 @@ const Momentazos = () => { //{ posts }: InferGetStaticPropsType<typeof getStatic
         </Link>
       </div>
       <div className={styles.container}>
-	{/*posts.map((post, i) => (
+	{posts.map((post, i) => (
 	    <div className={styles.containerItem} key={i}>
 		<img src={post.url}/>
 	    </div>
-	))*/}
+	))}
       </div>
     </div>
   );
@@ -27,11 +27,9 @@ const Momentazos = () => { //{ posts }: InferGetStaticPropsType<typeof getStatic
 export default Momentazos;
 
 export const getStaticProps = async () => {
- /* const prisma = new PrismaClient()
-
-  const posts = await prisma.momentazo.findMany()
-  */
- const posts: string[] = []
+ const prisma = new PrismaClient()
+ const posts = await prisma.momentazo.findMany()
+  
   return {
     props: { posts } 
   }

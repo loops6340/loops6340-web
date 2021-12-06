@@ -2,7 +2,7 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "module": "commonjs",
-    "outDir": ".next",
+    "outDir": "dist",
     "target": "es2017",
     "isolatedModules": false,
     "noEmit": false

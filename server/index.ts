@@ -1,5 +1,3 @@
-import 'reflect-metadata'
-
 import next from 'next'
 import { client } from './discord'
 import { createServer } from 'http'
