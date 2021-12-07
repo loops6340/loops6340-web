@@ -1,6 +1,7 @@
 import Link from "next/link";
 import styles from "../../styles/seiva.module.scss";
 import {GetStaticProps} from "next";
+import axios from 'axios'
 
 type Props = {
   name: string,
@@ -39,13 +40,11 @@ const SeivaServer = ({ name, iconURL, emojis }: Props) => {
         <h2 className="subtitle">Emojis</h2>
         <div className={styles.emojisContainer}>
           <ul>
-              {
-                emojis.map((emoji, i) =>  (
-                  <li key={i}>
-                    <img src={emoji}/>
-                  </li>
-                ))
-              }
+            {emojis.map((emoji, i) =>  (
+              <li key={i}>
+                <img src={emoji}/>
+              </li>
+            ))}
           </ul>
         </div>
       </div>
@@ -54,13 +53,19 @@ const SeivaServer = ({ name, iconURL, emojis }: Props) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
- //   const seiva = await client.guilds.fetch('760160214204022785')
+    const request = await axios.get("https://discord.com/api/v8/guilds/760160214204022785", {
+      headers: {
+        Authorization: `Bot ${process.env.BOT_TOKEN}`
+      }
+    })
+
+    const guild = request.data 
 
     return {
         props: {
-            name: "hi",
-            iconURL: "sSO!!",//seiva.iconURL({ dynamic: true }),
-            emojis: []//seiva.emojis.cache.map(emoji => emoji.url)
+            name: guild.name,
+            iconURL: `https://cdn.discordapp.com/icons/760160214204022785/${guild.icon}`,//seiva.iconURL({ dynamic: true }),
+            emojis: guild.emojis.map((emoji: any) => `https://cdn.discordapp.com/emojis/${emoji.id}`)
         }
     }
 }

@@ -1,12 +1,13 @@
 {
   "private": true,
   "scripts": {
-    "dev": "nodemon",
+    "dev": "next dev",
     "build": "prisma generate && next build",
     "start": "npm start"
   },
   "dependencies": {
     "@prisma/client": "^3.6.0",
+    "axios": "^0.24.0",
     "cross-env": "^7.0.2",
     "next": "latest",
     "react": "^17.0.2",
