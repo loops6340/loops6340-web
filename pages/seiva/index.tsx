@@ -60,7 +60,7 @@ export const getStaticProps: GetStaticProps = async () => {
         props: {
             name: "hi",
             iconURL: "sSO!!",//seiva.iconURL({ dynamic: true }),
-            emojis: "SOSs"//seiva.emojis.cache.map(emoji => emoji.url)
+            emojis: []//seiva.emojis.cache.map(emoji => emoji.url)
         }
     }
 }
