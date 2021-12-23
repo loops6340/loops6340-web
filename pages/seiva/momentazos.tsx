@@ -1,7 +1,5 @@
-import Link from "next/link";
 import styles from '@styles/momentazos.module.scss'
 import { useEffect, useState } from "react";
-import { InferGetStaticPropsType } from "next";
 import axios from "axios";
 import { Momentazo } from "../../types/momentazos";
 
