@@ -1,36 +1,37 @@
 import Link from "next/link";
 import styles from '@styles/momentazos.module.scss'
+import { useEffect, useState } from "react";
 import { InferGetStaticPropsType } from "next";
-import { PrismaClient } from '@prisma/client'
+import axios from "axios";
+import { Momentazo } from "../../types/momentazos";
 
-const Momentazos = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
+const Momentazos = () => {
+
+  const [momentazos, setMomentazos] = useState<Momentazo[]>([])
+
+  useEffect(() => {
+    axios.get('/api/momentazos').then(response => setMomentazos(response.data))
+  }, [])
 
   return (
     <div className="container">
       <h1 className="title">Momentazos</h1>
-      <div>
+      {/* <div>
         <Link href="/seiva" passHref>
-	  <button>Regresar</button>
+	        <button>Regresar</button>
         </Link>
-      </div>
+      </div> */}
       <div className={styles.container}>
-	{posts.map((post, i) => (
-	    <div className={styles.containerItem} key={i}>
-		<img src={post.url}/>
-	    </div>
-	))}
+	      {momentazos.map((momentazo, i) => (
+	        <div className={styles.containerItem} key={i}>
+	          <img src={momentazo.url}/>
+	        </div>
+	      ))}
+        <div className={styles.containerItem}></div>
       </div>
     </div>
   );
 };
 
-export default Momentazos;
 
-export const getStaticProps = async () => {
- const prisma = new PrismaClient()
- const posts = await prisma.momentazo.findMany()
-  
-  return {
-    props: { posts } 
-  }
-}
+export default Momentazos;
